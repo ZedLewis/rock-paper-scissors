@@ -6,18 +6,18 @@ function computerPlay() {
 }
 
 function playRound(playerSelection, computerSelection) {
-    if (playerSelection == computerSelection) {
+    if (playerSelection.toLowerCase() == computerSelection) {
         return "Tie"; 
     } else if (
-        (playerSelection == "rock" && computerSelection == "scissors") || 
-        (playerSelection == "scissors" && computerSelection == "paper") || 
-        (playerSelection == "paper" && computerSelection == "rock") ){
+        (playerSelection.toLowerCase() == "rock" && computerSelection == "scissors") || 
+        (playerSelection.toLowerCase() == "scissors" && computerSelection == "paper") || 
+        (playerSelection.toLowerCase() == "paper" && computerSelection == "rock") ){
         return "Winner!!";
     } else {
-        return "Wanker";
-    }
-    
-    
+        return "Loser!!";
+    }    
+}
 
+function game() {
     
 }
