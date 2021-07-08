@@ -1,0 +1,58 @@
+html {
+    height: 100%;
+    min-height: 100%;
+    background-color: black;
+}
+
+#title {
+    display: grid;
+    grid-template-columns:  1fr;
+    grid-template-rows: 200px;
+    grid-template-areas: 
+    ". name ."
+}
+#name {
+    justify-self: center;
+    align-self: center;
+    color: blanchedalmond;
+    font-family: monospace;
+}
+
+#concept {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px 200px;
+    grid-template-areas: 
+    "htp"
+    "rules";
+    color: blanchedalmond;
+    font-family: monospace;
+}
+
+#htp {
+    justify-self: center;
+}
+
+#rules {
+    justify-self: center;
+}
+
+#options {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 200px;
+    grid-template-areas: 
+    "rock paper scissors";
+}
+
+#rock:hover {
+    height: 210px;
+}
+
+#paper {
+
+}
+
+#scissors{
+
+}

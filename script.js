@@ -39,7 +39,7 @@ function game() {
 function endGame() {
     if (userScore > computerScore) {
         console.log ("Game over! You win!")
-        } else if (computerScore > UserScore) {
+        } else if (computerScore > userScore) {
             console.log ("You lose! Better luck next time.")
         }
     
