@@ -29,30 +29,53 @@ html {
     font-family: monospace;
 }
 
-#htp {
+#players {
+    justify-self: center;
+    font-family: monospace;
+}
+
+#score {
     justify-self: center;
 }
 
 #rules {
     justify-self: center;
+    align-self: center;
+    height: 100px;
 }
+
 
 #options {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 200px;
+    grid-template-rows: 100px;
     grid-template-areas: 
     "rock paper scissors";
 }
 
-#rock:hover {
-    height: 210px;
+#rock {
+    border: 0;
+    background-color: transparent;
+    height: 200px;
+    width: 200px;
+    justify-self: flex-end;
+    border-radius: 50%; 
 }
 
 #paper {
-
+    border: 0;
+    background-color: transparent;
+    height: 200px;
+    width: 200px;
+    justify-self: center;
+    border-radius: 50%;
 }
 
 #scissors{
-
+    border: 0;
+    background-color: transparent;
+    height: 200px;
+    width: 200px;
+    justify-self: flex-start;
+    border-radius: 50%;
 }
