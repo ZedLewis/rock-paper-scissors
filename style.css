@@ -34,9 +34,25 @@ html {
     font-family: monospace;
 }
 
-#score {
+#score-board {
+    height: 50px;
+    display: grid;
+    grid-template-rows: 200px 200px;
+    grid-template-areas: 
+    "user-score  computer-score";
+    color: blanchedalmond;
+    font-family: monospace;
+    font-size: 15px;
+}
+
+#user-score {
     justify-self: center;
 }
+
+#computer-score {
+    justify-self: center;
+}
+
 
 #rules {
     justify-self: center;
