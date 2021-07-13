@@ -7,18 +7,27 @@ let result_div = document.querySelector(".result");
 let paper_div = document.getElementById("paper");
 let scissors_div = document.getElementById("scissors");
 
-window.onload = function() {
+window.onload = function main() {
     let rock_btn = document.getElementById("rock");
     rock_btn.addEventListener("click",function(){
-        console.log("clicked")
+        game();
+    });
+
+    let paper_btn = document.getElementById("paper");
+    paper_btn.addEventListener("click",function(){
+        game();
+    });
+
+    let scissors_btn = document.getElementById("scissors");
+    scissors_btn.addEventListener("click",function(){
+        game();
     });
 }
 
 
 //** Prompts computer to pick a random option from array */
 function computerPlay() {
-    let options = new Array();
-    options = ["rock", "paper", "scissors"];
+    const options = ["rock", "paper", "scissors"];
     let randomNum = Math.floor(Math.random()*3); 
     return options[randomNum];
 }
