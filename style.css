@@ -34,6 +34,25 @@ html {
     font-family: monospace;
 }
 
+#playerId {
+    height: 50px;
+    display: grid;
+    grid-template-rows: 200px 200px;
+    grid-template-areas: 
+    "user computer";
+    font-family: monospace;
+    color: blanchedalmond;
+    font-size: large;
+}
+
+#user {
+    justify-self: center;
+}
+
+#computer {
+    justify-self: center;
+}
+
 #score-board {
     height: 50px;
     display: grid;
@@ -51,6 +70,10 @@ html {
 
 #computer-score {
     justify-self: center;
+}
+
+#outcome_p {
+    color: blanchedalmond;
 }
 
 
