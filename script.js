@@ -3,9 +3,9 @@ let userScore = 0;
 let userScore_span; 
 let computerScore_span;
 let scoreBoard_div = document.querySelector(".score-board");
-let outcome_p = document.querySelector(".outcome");
+// let outcome_p = document.querySelector(".outcome");
 
-// Latest - now working on button click, but need to reintegrate game function so that it runs 5 rounds. Also make result print, and work out why undefined player selection in console. //
+// Latest - DOM now working, just need to format to middle of page, but need to reintegrate game function so that it runs 5 rounds.  //
 
 window.onload = function main() {
     userScore_span = document.getElementById("user-score");
@@ -18,12 +18,12 @@ window.onload = function main() {
 
     let paper_btn = document.getElementById("paper");
     paper_btn.addEventListener("click",function(){
-        game("paper");
+        playRound("paper", computerPlay());
     });
 
     let scissors_btn = document.getElementById("scissors");
     scissors_btn.addEventListener("click",function(){
-        game("scissors");
+        playRound("scissors", computerPlay());
     });
 }
 
@@ -41,6 +41,7 @@ function game() {
 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection.toLowerCase() == computerSelection) {
+        draw ();
         return "Tie"; 
     } else if (
         (playerSelection.toLowerCase() == "rock" && computerSelection == "scissors") || 
@@ -64,13 +65,21 @@ function computerPlay() {
 function win () {
     userScore ++;
     userScore_span.innerHTML = userScore;
-    outcome_p.innerHTML = playerSelection + "beats" + computerSelection + ". you win!";
+    document.querySelector(".result");
+    result.textContent = 'You win this time!';
 }
 
 function lose () {
     computerScore ++;
     computerScore_span.innerHTML = computerScore;
+    result.textContent = 'Not this time! Try again..';
 }
+
+function draw () {
+    result.textContent = 'No winners this time. Keep trying pal'
+}
+
+
 
 
 function endGame() {

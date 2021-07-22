@@ -72,10 +72,15 @@ html {
     justify-self: center;
 }
 
-#outcome_p {
+#result {
+    font-family: monospace;
     color: blanchedalmond;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    grid-template-columns: 300px;
+    justify-self: center;
 }
-
 
 #rules {
     justify-self: center;
