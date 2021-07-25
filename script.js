@@ -3,10 +3,9 @@ let userScore = 0;
 let userScore_span; 
 let computerScore_span;
 let scoreBoard_div = document.querySelector(".score-board");
-// let outcome_p = document.querySelector(".outcome");
 
-// Latest - DOM now working, just need to format to middle of page, but need to reintegrate game function so that it runs 5 rounds.  //
 
+// Main function starts game based on button press //
 window.onload = function main() {
     userScore_span = document.getElementById("user-score");
     computerScore_span = document.getElementById("computer-score");
@@ -23,35 +22,25 @@ window.onload = function main() {
 
     let scissors_btn = document.getElementById("scissors");
     scissors_btn.addEventListener("click",function(){
-        playRound("scissors", computerPlay());
+        playRound("scissors", computerPlay());    
     });
 }
 
 //** Runs game to a best of 5 */
-function game() {
-    // let playerSelection = prompt("Choose Rock, Paper or Scissors").toLowerCase();
-    playRound(playerSelection, computerPlay());
-    if(userScore < 5 && computerScore < 5){
-        game();
-    }
-    else {
-        endGame()
-    }
-}
+// if(userScore == 5 || computerScore == 5){
+//         endGame()
+//     }
 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection.toLowerCase() == computerSelection) {
-        draw ();
-        return "Tie"; 
+        draw (); 
     } else if (
         (playerSelection.toLowerCase() == "rock" && computerSelection == "scissors") || 
         (playerSelection.toLowerCase() == "scissors" && computerSelection == "paper") || 
         (playerSelection.toLowerCase() == "paper" && computerSelection == "rock") ){
         win ();
-        return "Winner!";
      } else {
         lose ();
-        return "Loser!!";
      }    
 }
 
@@ -67,12 +56,20 @@ function win () {
     userScore_span.innerHTML = userScore;
     document.querySelector(".result");
     result.textContent = 'You win this time!';
+
+    if(userScore == 5 || computerScore == 5){
+        endGame()
+    }
 }
 
 function lose () {
     computerScore ++;
     computerScore_span.innerHTML = computerScore;
-    result.textContent = 'Not this time! Try again..';
+    result.textContent = 'Round to the Computer! Try again..';
+
+    if(userScore == 5 || computerScore == 5){
+        endGame()
+    }
 }
 
 function draw () {
@@ -84,9 +81,9 @@ function draw () {
 
 function endGame() {
     if (userScore > computerScore) {
-        console.log ("Game over! You win!")
+        result.textContent = 'You win! Congratulations. Press F5 to play again.';
         } else if (computerScore > userScore) {
-            console.log ("You lose! Better luck next time.")
+            result.textContent = 'Bested by a machine... not a good look! Press F5 to play again';
         }
     
 }
